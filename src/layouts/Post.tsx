@@ -8,7 +8,7 @@ export const PostLayout: NextComponentType = (props) => {
     <>
       <Header title="hotalog" description="プログラミング好きの技術ブログ" />
       <main className="main-root">
-        <Container>{props.children}</Container>
+        <Container maxWidth="800px">{props.children}</Container>
       </main>
       <Footer />
 
