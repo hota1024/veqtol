@@ -13,10 +13,6 @@ export const MainLayout: NextComponentType = (props) => {
       <Footer />
 
       <style global jsx>{`
-        html {
-          height: 100%;
-        }
-
         body {
           font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
             'Hiragino Sans', Meiryo, sans-serif;
