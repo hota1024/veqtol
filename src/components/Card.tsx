@@ -12,6 +12,7 @@ export const Card: FC = (props) => {
           background: white;
           display: block;
           max-width: 100%;
+          overflow: hidden;
           overflow-wrap: break-word;
           position: relative;
         }
