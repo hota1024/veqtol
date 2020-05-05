@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import clsx from 'clsx'
 
-export type ContainerProps = {}
+export type ContainerProps = {
+  maxWidth?: string
+}
 
 export const Container: FC<ContainerProps> = (props) => {
   return (
@@ -11,7 +13,7 @@ export const Container: FC<ContainerProps> = (props) => {
       <style jsx>{`
         .container {
           width: 100%;
-          max-width: 1200px;
+          max-width: ${props.maxWidth ?? '1200px'};
           margin: 0 auto;
         }
       `}</style>
