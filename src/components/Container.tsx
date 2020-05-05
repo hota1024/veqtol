@@ -13,7 +13,6 @@ export const Container: FC<ContainerProps> = (props) => {
           width: 100%;
           max-width: 1200px;
           margin: 0 auto;
-          background: black;
         }
       `}</style>
     </>
