@@ -16,4 +16,9 @@ export type PostMeta = {
    * Post thumbnail url.
    */
   thumbnail?: string
+
+  /**
+   * Post updated at.
+   */
+  updatedAt: string
 }
