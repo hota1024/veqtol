@@ -2,13 +2,19 @@ import { NextComponentType } from 'next'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Container } from '../components/Container'
+import { Card } from '../components/Card'
+import { CardContent } from '../components/CardContent'
 
 export const PostLayout: NextComponentType = (props) => {
   return (
     <>
       <Header title="hotalog" description="プログラミング好きの技術ブログ" />
       <main className="main-root">
-        <Container maxWidth="800px">{props.children}</Container>
+        <Container maxWidth="800px">
+          <Card>
+            <CardContent>{props.children}</CardContent>
+          </Card>
+        </Container>
       </main>
       <Footer />
 
