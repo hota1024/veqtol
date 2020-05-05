@@ -1,9 +1,13 @@
 import { NextComponentType } from 'next'
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
 
 export const MainLayout: NextComponentType = (props) => {
   return (
     <>
-      <main>{props.children}</main>
+      <Header title="hotalog" description="プログラミング好きの技術ブログ" />
+      <main className="main-root">{props.children}</main>
+      <Footer />
 
       <style global jsx>{`
         body {
@@ -12,6 +16,19 @@ export const MainLayout: NextComponentType = (props) => {
 
           background: #f6f6f4;
           color: #202020;
+
+          padding: 0;
+          margin: 0;
+        }
+
+        #__next {
+          display: flex;
+          flex-flow: column;
+          min-height: 100vh;
+        }
+
+        .main-root {
+          flex: 1;
         }
       `}</style>
     </>
