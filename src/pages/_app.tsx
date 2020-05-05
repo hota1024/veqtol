@@ -1,4 +1,5 @@
 import App from 'next/app'
+import { MainLayout } from '../layouts/Main'
 
 export default class extends App {
   render() {
@@ -6,7 +7,9 @@ export default class extends App {
 
     return (
       <>
-        <Component {...pageProps} />
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
       </>
     )
   }
