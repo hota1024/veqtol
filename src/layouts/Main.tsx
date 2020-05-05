@@ -1,15 +1,22 @@
 import { NextComponentType } from 'next'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
+import { Container } from '../components/Container'
 
 export const MainLayout: NextComponentType = (props) => {
   return (
     <>
       <Header title="hotalog" description="プログラミング好きの技術ブログ" />
-      <main className="main-root">{props.children}</main>
+      <main className="main-root">
+        <Container>{props.children}</Container>
+      </main>
       <Footer />
 
       <style global jsx>{`
+        html {
+          height: 100%;
+        }
+
         body {
           font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
             'Hiragino Sans', Meiryo, sans-serif;
@@ -29,6 +36,8 @@ export const MainLayout: NextComponentType = (props) => {
 
         .main-root {
           flex: 1;
+          height: 100%;
+          display: flex;
         }
       `}</style>
     </>
