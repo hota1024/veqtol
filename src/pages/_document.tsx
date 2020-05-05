@@ -5,7 +5,6 @@ export default class extends NextDocument {
     return (
       <Html>
         <Head>
-          <title>hotalog</title>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
