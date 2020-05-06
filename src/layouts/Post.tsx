@@ -1,17 +1,24 @@
-import { NextComponentType } from 'next'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Container } from '../components/Container'
 import { Card } from '../components/Card'
 import { CardContent } from '../components/CardContent'
+import { PostMeta } from '../types/PostMeta'
+import { FC } from 'react'
+import { Image } from '../components/Image'
 
-export const PostLayout: NextComponentType = (props) => {
+export type PostLayoutProps = {
+  meta: PostMeta
+}
+
+export const PostLayout: FC<PostLayoutProps> = (props) => {
   return (
     <>
       <Header title="hotalog" description="プログラミング好きの技術ブログ" />
       <main className="main-root">
         <Container maxWidth="800px">
           <Card>
+            <Image src={props.meta.thumbnail} />
             <CardContent>{props.children}</CardContent>
           </Card>
         </Container>
