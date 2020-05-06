@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <MainLayout>
         <Card>
-          <Image src="/code.jpg" />
+          <Image src="/thumbnail-0.png" />
           <CardContent>Hello world</CardContent>
         </Card>
       </MainLayout>
