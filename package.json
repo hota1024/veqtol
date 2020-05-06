@@ -12,6 +12,7 @@
     "@mdx-js/loader": "^1.6.1",
     "@next/mdx": "^9.3.6",
     "@types/webpack-env": "^1.15.2",
+    "chroma-js": "^2.1.0",
     "clsx": "^1.1.0",
     "dayjs": "^1.8.26",
     "next": "9.3.6",
