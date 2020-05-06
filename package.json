@@ -20,6 +20,7 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.0.0",
     "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
