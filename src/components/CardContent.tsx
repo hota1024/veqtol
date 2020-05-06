@@ -1,9 +1,16 @@
 import { FC } from 'react'
+import clsx from 'clsx'
 
-export const CardContent: FC = (props) => {
+export type CardContentProps = {
+  className?: string
+}
+
+export const CardContent: FC<CardContentProps> = (props) => {
   return (
     <>
-      <div className="card-content">{props.children}</div>
+      <div className={clsx('card-content', props.className)}>
+        {props.children}
+      </div>
 
       <style jsx>{`
         .card-content {
