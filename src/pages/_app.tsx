@@ -9,6 +9,10 @@ export default class extends App {
       <>
         <Head>
           <title>hotalog</title>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <Component {...pageProps} />
       </>
