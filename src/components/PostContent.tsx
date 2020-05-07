@@ -15,6 +15,7 @@ export const PostContent: FC = (props) => {
         p {
           margin-left: 1.4rem;
           margin-right: 1.4rem;
+          line-height: 1.4;
         }
       `}</style>
     </>
