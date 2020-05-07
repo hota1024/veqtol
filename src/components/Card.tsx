@@ -1,8 +1,10 @@
 import { FC } from 'react'
+import clsx from 'clsx'
 
 export type CardProps = {
   noShadow?: boolean
   color?: string
+  className?: string
 }
 
 export const Card: FC<CardProps> = (props) => {
@@ -11,7 +13,7 @@ export const Card: FC<CardProps> = (props) => {
 
   return (
     <>
-      <div className="card">{props.children}</div>
+      <div className={clsx('card', props.className)}>{props.children}</div>
 
       <style jsx>{`
         .card {
