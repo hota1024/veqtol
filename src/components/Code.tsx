@@ -10,6 +10,7 @@ export type CodeProps = {
   language: Language
   className?: string
   title?: string
+  highlight?: string
 }
 
 export const Code: FC<CodeProps> = (props) => {
@@ -19,6 +20,10 @@ export const Code: FC<CodeProps> = (props) => {
     (props?.className.replace(/language-/, '') as Language) ??
     ('' as Language)
   const title = props.title
+  const highlightLines =
+    props.highlight?.split(/,/g).map((line) => parseInt(line)) ?? []
+  const isHighlightLine = (line: number) =>
+    !!highlightLines.find((item) => item === line)
 
   return (
     <>
@@ -42,7 +47,14 @@ export const Code: FC<CodeProps> = (props) => {
             {title && <span className="code-title">{title}</span>}
             <pre className="code-content">
               {tokens.map((line, lineKey) => (
-                <div key={lineKey} {...getLineProps({ line, key: lineKey })}>
+                <div
+                  className={clsx(
+                    'code-line',
+                    isHighlightLine(lineKey) && 'code-line-highlight'
+                  )}
+                  key={lineKey}
+                  {...getLineProps({ line, key: lineKey })}
+                >
                   {line.map((token, tokenKey) => (
                     <span
                       key={tokenKey}
@@ -58,7 +70,7 @@ export const Code: FC<CodeProps> = (props) => {
 
       <style jsx>{`
         .code {
-          padding: 20px 32px;
+          padding: 20px 0;
           font-family: 'Roboto Mono', monospace;
           position: relative;
           margin: 8px 0;
@@ -84,11 +96,19 @@ export const Code: FC<CodeProps> = (props) => {
           font-weight: 400;
           padding: 0;
           margin: 0;
+          line-height: 1.4;
         }
 
         .code-content * {
           margin: 0;
-          padding: 0;
+        }
+
+        .code-line {
+          padding: 0 32px;
+        }
+
+        .code-line-highlight {
+          background: rgba(0, 0, 0, 0.2);
         }
       `}</style>
     </>
