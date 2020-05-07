@@ -13,9 +13,11 @@ export type CodeProps = {
 }
 
 export const Code: FC<CodeProps> = (props) => {
-  const code = props.children ?? ''
+  const code = props.children.trim() ?? ''
   const language =
-    props.language ?? (props.className.replace(/language-/, '') as Language)
+    props.language ??
+    (props?.className.replace(/language-/, '') as Language) ??
+    ('' as Language)
   const title = props.title
 
   return (
