@@ -5,9 +5,16 @@ export const PostContent: FC = (props) => {
     <>
       <div className="post-content">{props.children}</div>
 
-      <style jsx>{`
-        .post-content {
-          padding: 16px;
+      <style jsx global>{`
+        .post-content h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+          margin-left: 1.4rem;
+          margin-right: 1.4rem;
         }
       `}</style>
     </>
