@@ -58,8 +58,7 @@ export const Code: FC<CodeProps> = (props) => {
 
       <style jsx>{`
         .code {
-          padding: 20px;
-          border-radius: 3px;
+          padding: 20px 32px;
           font-family: 'Roboto Mono', monospace;
           position: relative;
           margin: 8px 0;
@@ -69,7 +68,7 @@ export const Code: FC<CodeProps> = (props) => {
           background: rgba(0, 0, 0, 0.4);
           color: white;
           position: absolute;
-          left: 16px;
+          left: 32px;
           top: 0;
           padding: 8px 16px;
           border-bottom-left-radius: 4px;
