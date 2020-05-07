@@ -1,5 +1,7 @@
 import App from 'next/app'
 import Head from 'next/head'
+import { MDXProvider } from '@mdx-js/react'
+import { MdxComponents } from '../MdxComponents'
 
 export default class extends App {
   render() {
@@ -14,7 +16,9 @@ export default class extends App {
             rel="stylesheet"
           />
         </Head>
-        <Component {...pageProps} />
+        <MDXProvider components={MdxComponents}>
+          <Component {...pageProps} />
+        </MDXProvider>
       </>
     )
   }
