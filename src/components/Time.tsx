@@ -8,7 +8,7 @@ export type TimeProps = {
 
 export const Time: FC<TimeProps> = (props) => {
   const time = dayjs(props.time)
-  const color = props.color ?? 'inherit'
+  const color = props.color ?? '#a0a0a0'
 
   return (
     <>
