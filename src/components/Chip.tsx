@@ -18,7 +18,7 @@ export const Chip: FC<ChipProps> = (props) => {
   return (
     <>
       <Wrapper className="tag" href={href}>
-        <span className="tag-label">Hello</span>
+        <span className="tag-label">${props.children}</span>
       </Wrapper>
 
       <style jsx>{`
