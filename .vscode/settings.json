@@ -42,7 +42,7 @@
             "type": "string"
           }
         },
-        "required": ["headerTitle", "timeColor", "postPaginationNextText"],
+        "required": ["headerTitle"],
         "additionalProperties": false
       }
     }
