@@ -1,4 +1,4 @@
 {
-  "headerTitle": "Your site title",
-  "headerDescription": "You site description"
+  "title": "Your site title",
+  "description": "You site description"
 }
