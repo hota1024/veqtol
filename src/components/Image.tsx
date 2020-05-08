@@ -5,12 +5,12 @@ export type ImageProps = {
   alt?: string
   width?: number | string
   height?: number | string
-  srcset?: string
+  srcSet?: string
   fitType?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
 }
 
 export const Image: FC<ImageProps> = (props) => {
-  const { src, alt, srcset } = props
+  const { src, alt, srcSet: srcSet } = props
   let { width, height, fitType } = props
 
   width = typeof width === 'number' ? width + 'px' : width ?? '100%'
@@ -19,7 +19,7 @@ export const Image: FC<ImageProps> = (props) => {
 
   return (
     <>
-      <img className="image-img" {...{ src, alt, width, height, srcset }} />
+      <img className="image-img" {...{ src, alt, width, height, srcSet }} />
 
       <style jsx>{`
         .image-img {
