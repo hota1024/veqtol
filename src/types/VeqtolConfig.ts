@@ -3,28 +3,28 @@
  */
 export type VeqtolConfig = {
   /**
-   * Header title.
+   * Site title.
    */
-  headerTitle: string
+  title: string
 
   /**
-   * Header title text css color.
+   * Site title text css color.
    *
    * @default `inherit`
    */
-  headerTitleColor?: string
+  titleColor?: string
 
   /**
-   * Header description.
+   * Site description.
    */
-  headerDescription?: string
+  description?: string
 
   /**
-   * Header description text css color.
+   * Site description text css color.
    *
    * @default `inherit`
    */
-  headerDescriptionColor?: string
+  descriptionColor?: string
 
   /**
    * Site background css style.
