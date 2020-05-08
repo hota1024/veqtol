@@ -45,21 +45,21 @@ export type VeqtolConfig = {
    *
    * @default `white`
    */
-  postBackground?: string
+  postColor?: string
 
   /**
    * Tag background css style.
    *
    * @default `#f0f0f0`
    */
-  tagBackground?: string
+  tagColor?: string
 
   /**
    * Tag text css color.
    *
    * @default `#202020`
    */
-  tagColor?: string
+  tagText?: string
 
   /**
    * Time text css color.
@@ -67,6 +67,20 @@ export type VeqtolConfig = {
    * @default `#a0a0a0`
    */
   timeColor?: string
+
+  /**
+   * Button css color.
+   *
+   * @default `white`
+   */
+  buttonColor?: string
+
+  /**
+   * Button text css color.
+   *
+   * @default `#202020`
+   */
+  buttonText?: string
 
   /**
    * Post pagination previous text.
