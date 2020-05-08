@@ -1,11 +1,13 @@
 import { FC } from 'react'
 import chroma from 'chroma-js'
 import { NumberUnitize } from '../utils/NumberUnitize'
+import clsx from 'clsx'
 
 export type ButtonProps = {
   href?: string
   height?: string | number
   onClick?: () => GlobalEventHandlers['onclick']
+  className?: string
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -16,7 +18,11 @@ export const Button: FC<ButtonProps> = (props) => {
 
   return (
     <>
-      <Wrapper className="button" href={props.href} onClick={props.onClick}>
+      <Wrapper
+        className={clsx('button', props.className)}
+        href={props.href}
+        onClick={props.onClick}
+      >
         <span className="button-text">{props.children}</span>
       </Wrapper>
 
