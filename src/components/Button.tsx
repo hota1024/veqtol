@@ -28,7 +28,6 @@ export const Button: FC<ButtonProps> = (props) => {
 
       <style jsx>{`
         .button {
-          position: relative;
           display: inline-flex;
           justify-content: center;
           align-items: center;
