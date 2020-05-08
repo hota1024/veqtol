@@ -8,6 +8,7 @@ export type ButtonProps = {
   height?: string | number
   onClick?: () => GlobalEventHandlers['onclick']
   className?: string
+  disabled?: boolean
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -15,11 +16,16 @@ export const Button: FC<ButtonProps> = (props) => {
   const color = chroma('white')
   const textColor = chroma('#202020')
   const height = NumberUnitize(props.height ?? 40, 'px')
+  const disabled = props.disabled ?? false
 
   return (
     <>
       <Wrapper
-        className={clsx('button', props.className)}
+        className={clsx(
+          'button',
+          disabled && 'button-disabled',
+          props.className
+        )}
         href={props.href}
         onClick={props.onClick}
       >
@@ -53,6 +59,13 @@ export const Button: FC<ButtonProps> = (props) => {
         .button:active {
           background: ${color.darken(0.4).css()};
           box-shadow: none;
+        }
+
+        .button-disabled {
+          background: ${color.darken(0.4).css()};
+          box-shadow: none;
+          pointer: default;
+          pointer-events: none;
         }
 
         .button-text {
