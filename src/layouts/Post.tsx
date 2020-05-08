@@ -26,7 +26,7 @@ export const PostLayout: FC<PostLayoutProps> = (props) => {
           <Card>
             <Image src={meta.thumbnail} />
             <CardContent>
-              {meta.updatedAt && <Time time={meta.updatedAt} color="#a0a0a0" />}
+              {meta.updatedAt && <Time time={meta.updatedAt} />}
               <h1>{meta.title}</h1>
               <div>
                 {meta.tags.map((tag) => (
