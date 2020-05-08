@@ -25,10 +25,6 @@ export const GetPagePosts = (page: number, pageSize = 12): PaginatedPosts => {
 
   if (page + 1 < pageCount) result.nextPage = page + 1
   if (page - 1 >= 0) result.prevPage = page - 1
-  if (typeof result.nextPage !== 'undefined')
-    result.next = () => GetPagePosts(result.nextPage, pageSize)
-  if (typeof result.prevPage !== 'undefined')
-    result.next = () => GetPagePosts(result.prevPage, pageSize)
 
   return result
 }
@@ -38,8 +34,6 @@ export type PaginatedPosts = {
   pageSize: number
   nextPage?: number
   prevPage?: number
-  next?: () => PaginatedPosts
-  prev?: () => PaginatedPosts
   pageCount: number
   currentPage: number
 }
