@@ -1,45 +1,36 @@
 import { MainLayout } from '../layouts/Main'
-import { FC } from 'react'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { PostData } from '../types/PostData'
+import { NextPage } from 'next'
 import { PostList } from '../components/PostList'
+import { GetPagePosts, PaginatedPosts } from '../utils/GetPagePosts'
+import { Pagination, LinkMaker } from '../components/Pagination'
 
-const Home: FC<{ posts: PostData[] }> = (props) => {
-  const { posts } = props
+const Home: NextPage<{ page: PaginatedPosts }> = (props) => {
+  const { page } = props
+  const { posts } = page
+
+  const linkMaker: LinkMaker = (page: number) => `/page-${page}`
 
   return (
     <>
       <MainLayout>
         <PostList posts={posts} />
+
+        <Pagination
+          currentPage={0}
+          pageCount={page.pageCount}
+          linkMaker={linkMaker}
+        />
       </MainLayout>
     </>
   )
 }
 
+Home.getInitialProps = () => {
+  const page = GetPagePosts(0, 6)
+
+  return {
+    page,
+  }
+}
+
 export default Home
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: ['/'],
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const contexts = require.context('./', true, /\.mdx$/)
-  const posts: PostData[] = []
-
-  contexts.keys().forEach((key) => {
-    const meta = contexts(key).meta ?? {}
-    posts.push({
-      name: key.replace(/\.mdx$/, ''),
-      ...meta,
-    })
-  })
-
-  return {
-    props: {
-      posts,
-    },
-  }
-}
