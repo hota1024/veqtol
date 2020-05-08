@@ -23,16 +23,22 @@
           "color": {
             "type": "string"
           },
-          "postBackground": {
-            "type": "string"
-          },
-          "tagBackground": {
+          "postColor": {
             "type": "string"
           },
           "tagColor": {
             "type": "string"
           },
+          "tagText": {
+            "type": "string"
+          },
           "timeColor": {
+            "type": "string"
+          },
+          "buttonColor": {
+            "type": "string"
+          },
+          "buttonText": {
             "type": "string"
           },
           "postPaginationPrevText": {
