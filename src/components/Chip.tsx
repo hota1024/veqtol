@@ -12,8 +12,8 @@ export const Chip: FC<ChipProps> = (props) => {
   let { color, textColor } = props
 
   const Wrapper = href ? 'a' : 'span'
-  color = color ?? '#e0e0e0'
-  textColor = textColor ?? 'inherit'
+  color = color ?? '#f0f0f0'
+  textColor = textColor ?? '#202020'
 
   return (
     <>
@@ -43,6 +43,7 @@ export const Chip: FC<ChipProps> = (props) => {
           padding-left: 14px;
           padding-right: 14px;
           overflow: hidden;
+          font-weight: 500;
         }
       `}</style>
     </>
