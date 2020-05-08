@@ -27,7 +27,7 @@ export const PostCard: FC<PostCardProps> = (props) => {
               <h2 className="post-card-title">{post.title}</h2>
             </CardContent>
             <CardContent className="post-card-content">
-              <Time time={post.updatedAt} color="#e0e0e0" />
+              <Time time={post.updatedAt} />
             </CardContent>
           </a>
         </Link>
