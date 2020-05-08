@@ -1,0 +1,50 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["/veqtol.json"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "headerTitle": {
+            "type": "string"
+          },
+          "headerTitleColor": {
+            "type": "string"
+          },
+          "headerDescription": {
+            "type": "string"
+          },
+          "headerDescriptionColor": {
+            "type": "string"
+          },
+          "background": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "postBackground": {
+            "type": "string"
+          },
+          "tagBackground": {
+            "type": "string"
+          },
+          "tagColor": {
+            "type": "string"
+          },
+          "timeColor": {
+            "type": "string"
+          },
+          "postPaginationPrevText": {
+            "type": "string"
+          },
+          "postPaginationNextText": {
+            "type": "string"
+          }
+        },
+        "required": ["headerTitle", "timeColor", "postPaginationNextText"],
+        "additionalProperties": false
+      }
+    }
+  ]
+}
