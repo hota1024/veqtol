@@ -5,16 +5,16 @@
       "schema": {
         "type": "object",
         "properties": {
-          "headerTitle": {
+          "title": {
             "type": "string"
           },
-          "headerTitleColor": {
+          "titleColor": {
             "type": "string"
           },
-          "headerDescription": {
+          "description": {
             "type": "string"
           },
-          "headerDescriptionColor": {
+          "descriptionColor": {
             "type": "string"
           },
           "background": {
@@ -42,7 +42,7 @@
             "type": "string"
           }
         },
-        "required": ["headerTitle"],
+        "required": ["title"],
         "additionalProperties": false
       }
     }
