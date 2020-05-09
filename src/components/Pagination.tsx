@@ -8,6 +8,8 @@ export type PaginationProps = {
   pageCount: number
   currentPage: number
   linkMaker: LinkMaker
+  prevText?: string
+  nextText?: string
 }
 
 export const Pagination: FC<PaginationProps> = (props) => {
@@ -15,6 +17,8 @@ export const Pagination: FC<PaginationProps> = (props) => {
   const hasNext = props.currentPage < props.pageCount - 1
   const prevLink = props.linkMaker(props.currentPage - 1)
   const nextLink = props.linkMaker(props.currentPage + 1)
+  const prevText = props.prevText ?? 'Prev'
+  const nextText = props.nextText ?? 'Next'
 
   return (
     <>
@@ -25,7 +29,7 @@ export const Pagination: FC<PaginationProps> = (props) => {
             href={prevLink}
             disabled={!hasPrev}
           >
-            Prev
+            {prevText}
           </Button>
         </Link>
         <span className="pagination-status">
@@ -37,7 +41,7 @@ export const Pagination: FC<PaginationProps> = (props) => {
             href={nextLink}
             disabled={!hasNext}
           >
-            Next
+            {nextText}
           </Button>
         </Link>
       </div>
