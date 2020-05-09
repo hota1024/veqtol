@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Get } from '../utils/Config'
 
 export const InlineCode: FC = (props) => {
   return (
@@ -7,7 +8,8 @@ export const InlineCode: FC = (props) => {
 
       <style jsx>{`
         .inline-code {
-          background: rgba(0, 0, 0, 0.06);
+          background: ${Get('inlineCodeColor')};
+          color: ${Get('inlineCodeText')};
           font-family: 'Roboto Mono', monospace;
           padding: 0 6px;
           border-radius: 2px;
