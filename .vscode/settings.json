@@ -26,6 +26,18 @@
           "postColor": {
             "type": "string"
           },
+          "postText": {
+            "type": "string"
+          },
+          "postHeader1BorderColor": {
+            "type": "string"
+          },
+          "inlineCodeColor": {
+            "type": "string"
+          },
+          "inlineCodeText": {
+            "type": "string"
+          },
           "tagColor": {
             "type": "string"
           },
