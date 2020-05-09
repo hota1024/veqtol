@@ -1,8 +1,9 @@
 import { PostData } from '../types/PostData'
 import { Paginate } from './Paginate'
+import { GetPostsContexts } from './GetPostsContexts'
 
 export const GetPagePosts = (page: number, pageSize = 12): PaginatedPosts => {
-  const contexts = require.context('../pages', true, /\.mdx$/)
+  const contexts = GetPostsContexts()
   const posts: PostData[] = []
 
   const paginated = Paginate(contexts.keys(), pageSize)
