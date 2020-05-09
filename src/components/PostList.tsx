@@ -17,7 +17,6 @@ export const PostList: FC<PostListProps> = (props) => {
 
       <style jsx>{`
         .post-list {
-          margin: 64px auto;
           max-width: 1200px;
           display: grid;
           justify-content: center;
