@@ -2,6 +2,7 @@ import { FC } from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import highlightTheme from 'prism-react-renderer/themes/oceanicNext'
 import clsx from 'clsx'
+import { ParseLineQuery } from '../utils/ParseLineQuery'
 
 type HighlightChildren = Parameters<Highlight['props']['children']>[0]
 
@@ -20,10 +21,13 @@ export const Code: FC<CodeProps> = (props) => {
     (props?.className.replace(/language-/, '') as Language) ??
     ('' as Language)
   const title = props.title
-  const highlightLines =
-    props.highlight?.split(/,/g).map((line) => parseInt(line)) ?? []
+  const highlightLines = ParseLineQuery(
+    props.highlight || '',
+    code.split(/\n/g).length
+  )
+  console.log(highlightLines)
   const isHighlightLine = (line: number) =>
-    !!highlightLines.find((item) => item === line)
+    typeof highlightLines.find((item) => item === line) !== 'undefined'
 
   return (
     <>
@@ -50,7 +54,8 @@ export const Code: FC<CodeProps> = (props) => {
                 <div
                   className={clsx(
                     'code-line',
-                    isHighlightLine(lineKey) && 'code-line-highlight'
+                    isHighlightLine(lineKey) && 'code-line-highlight',
+                    `code-line-${lineKey}`
                   )}
                   key={lineKey}
                   {...getLineProps({ line, key: lineKey })}
