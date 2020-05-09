@@ -6,8 +6,9 @@ import { Card } from './Card'
 
 import { Image } from './Image'
 import { CardContent } from './CardContent'
-import { Chip } from './Chip'
 import { Time } from './Time'
+import { Get } from '../utils/Config'
+import { Tags } from './Tags'
 
 export type PostCardProps = {
   className?: string
@@ -19,7 +20,10 @@ export const PostCard: FC<PostCardProps> = (props) => {
 
   return (
     <>
-      <Card className={clsx('post-card', props.className)}>
+      <Card
+        className={clsx('post-card', props.className)}
+        color={Get('postColor')}
+      >
         <Link href={post.name}>
           <a className="post-card-link" href={post.name}>
             <Image src={post.thumbnail} width="100%" height="auto" />
@@ -31,12 +35,8 @@ export const PostCard: FC<PostCardProps> = (props) => {
             </CardContent>
           </a>
         </Link>
-        <CardContent className="post-card-content post-card-tags">
-          {post.tags.map((tag) => (
-            <Chip key={tag} href={tag}>
-              {tag}
-            </Chip>
-          ))}
+        <CardContent className="post-card-content">
+          <Tags tags={post.tags} className="post-card-tags" />
         </CardContent>
       </Card>
 
@@ -57,7 +57,7 @@ export const PostCard: FC<PostCardProps> = (props) => {
 
         .post-card-link {
           text-decoration: none;
-          color: #202020;
+          color: inherit;
         }
 
         .post-card-content {
