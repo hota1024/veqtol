@@ -3,7 +3,9 @@ import Link from 'next/link'
 
 export type HeaderProps = {
   title: string
+  titleColor?: string
   description: string
+  descriptionColor?: string
 }
 
 export const Header: FC<HeaderProps> = (props) => {
@@ -33,11 +35,13 @@ export const Header: FC<HeaderProps> = (props) => {
         .header-title {
           font-size: 3rem;
           margin-bottom: 16px;
+          color: ${props.titleColor ?? 'inherit'};
         }
 
         .header-description {
           font-size: 1.2rem;
           margin: 0;
+          color: ${props.descriptionColor ?? 'inherit'};
         }
       `}</style>
     </>
