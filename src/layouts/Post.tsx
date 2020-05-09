@@ -7,9 +7,10 @@ import { PostMeta } from '../types/PostMeta'
 import { FC } from 'react'
 import { Image } from '../components/Image'
 import { Time } from '../components/Time'
-import { Chip } from '../components/Chip'
 import { Divider } from '../components/Divider'
 import { PostContent } from '../components/PostContent'
+import { Get } from '../utils/Config'
+import { Tags } from '../components/Tags'
 
 export type PostLayoutProps = {
   meta: PostMeta
@@ -23,18 +24,12 @@ export const PostLayout: FC<PostLayoutProps> = (props) => {
       <Header title="hotalog" description="プログラミング好きの技術ブログ" />
       <main className="main-root">
         <Container maxWidth="800px">
-          <Card>
+          <Card color={Get('postColor')}>
             <Image src={meta.thumbnail} />
             <CardContent>
               {meta.updatedAt && <Time time={meta.updatedAt} />}
               <h1>{meta.title}</h1>
-              <div>
-                {meta.tags.map((tag) => (
-                  <Chip key={tag} href={`/${tag}`}>
-                    {tag}
-                  </Chip>
-                ))}
-              </div>
+              <Tags tags={meta.tags} />
             </CardContent>
             <Divider />
             <PostContent>{props.children}</PostContent>
@@ -48,8 +43,8 @@ export const PostLayout: FC<PostLayoutProps> = (props) => {
           font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
             'Hiragino Sans', Meiryo, sans-serif;
 
-          background: #f6f6f4;
-          color: #202020;
+          background: ${Get('background')};
+          color: ${Get('color')};
 
           padding: 0;
           margin: 0;
