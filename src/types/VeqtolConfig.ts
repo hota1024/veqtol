@@ -48,6 +48,34 @@ export type VeqtolConfig = {
   postColor?: string
 
   /**
+   * Post text css color.
+   *
+   * @default `inherit`
+   */
+  postText?: string
+
+  /**
+   * Border css color of post header1.
+   *
+   * @default `#202020`
+   */
+  postHeader1BorderColor?: string
+
+  /**
+   * Inline code background css style.
+   *
+   * @default `rgba(200, 200, 200, 0.4)`
+   */
+  inlineCodeColor?: string
+
+  /**
+   * Inline code text css color.
+   *
+   * @default `inherit`
+   */
+  inlineCodeText?: string
+
+  /**
    * Tag background css style.
    *
    * @default `#f0f0f0`
