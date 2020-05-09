@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import dayjs from 'dayjs'
+import { Get } from '../utils/Config'
 
 export type TimeProps = {
   time: string
@@ -8,7 +9,7 @@ export type TimeProps = {
 
 export const Time: FC<TimeProps> = (props) => {
   const time = dayjs(props.time)
-  const color = props.color ?? '#a0a0a0'
+  const color = props.color ?? Get('timeColor')
 
   return (
     <>
