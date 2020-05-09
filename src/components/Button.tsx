@@ -2,6 +2,7 @@ import { FC } from 'react'
 import chroma from 'chroma-js'
 import { NumberUnitize } from '../utils/NumberUnitize'
 import clsx from 'clsx'
+import { Get } from '../utils/Config'
 
 export type ButtonProps = {
   href?: string
@@ -9,12 +10,14 @@ export type ButtonProps = {
   onClick?: () => GlobalEventHandlers['onclick']
   className?: string
   disabled?: boolean
+  color?: string
+  textColor?: string
 }
 
 export const Button: FC<ButtonProps> = (props) => {
   const Wrapper = props.href ? 'a' : 'button'
-  const color = chroma('white')
-  const textColor = chroma('#202020')
+  const color = chroma(props.color ?? Get('buttonColor'))
+  const textColor = chroma(props.textColor ?? Get('buttonText'))
   const height = NumberUnitize(props.height ?? 40, 'px')
   const disabled = props.disabled ?? false
 
@@ -71,6 +74,10 @@ export const Button: FC<ButtonProps> = (props) => {
         .button-text {
           color: ${textColor.css()};
           font-size: 1.1rem;
+        }
+
+        .button-disabled .button-text {
+          color: ${textColor.darken(0.2).css()};
         }
       `}</style>
     </>
