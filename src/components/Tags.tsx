@@ -15,7 +15,7 @@ export const Tags: FC<TagsProps> = (props) => {
         {props.tags.map((tag, key) => (
           <Chip
             key={key}
-            href={tag}
+            href={`/tags/${tag}`}
             color={Get('tagColor')}
             textColor={Get('tagText')}
           >
