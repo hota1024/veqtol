@@ -2,11 +2,17 @@ import { NextComponentType } from 'next'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Container } from '../components/Container'
+import { config, Get } from '../utils/Config'
 
 export const MainLayout: NextComponentType = (props) => {
   return (
     <>
-      <Header title="hotalog" description="プログラミング好きの技術ブログ" />
+      <Header
+        title={config.title}
+        titleColor={config.titleColor}
+        description={config.description}
+        descriptionColor={config.descriptionColor}
+      />
       <main className="main-root">
         <Container>{props.children}</Container>
       </main>
@@ -17,8 +23,8 @@ export const MainLayout: NextComponentType = (props) => {
           font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
             'Hiragino Sans', Meiryo, sans-serif;
 
-          background: #f6f6f4;
-          color: #202020;
+          background: ${Get('background')};
+          color: ${Get('color')};
 
           padding: 0;
           margin: 0;
