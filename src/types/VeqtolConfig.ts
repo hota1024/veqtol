@@ -48,6 +48,13 @@ export type VeqtolConfig = {
   postColor?: string
 
   /**
+   * Posts per page.
+   *
+   * @default `6`
+   */
+  postsPerPage?: number
+
+  /**
    * Post text css color.
    *
    * @default `inherit`
