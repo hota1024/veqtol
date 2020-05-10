@@ -25,7 +25,6 @@ export const Code: FC<CodeProps> = (props) => {
     props.highlight || '',
     code.split(/\n/g).length
   )
-  console.log(highlightLines)
   const isHighlightLine = (line: number) =>
     typeof highlightLines.find((item) => item === line) !== 'undefined'
 
