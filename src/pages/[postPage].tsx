@@ -1,12 +1,14 @@
 import { MainLayout } from '../layouts/Main'
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import { PostList } from '../components/PostList'
-import { GetPagePosts, PaginatedPosts } from '../utils/GetPagePosts'
+import { GetPagePosts } from '../utils/GetPagePosts'
 import { Pagination, LinkMaker } from '../components/Pagination'
+import { PageData } from '../utils/GetPage'
+import { PostData } from '../types/PostData'
 
-const PostPage: NextPage<{ page: PaginatedPosts }> = (props) => {
+const PostPage: NextPage<{ page: PageData<PostData> }> = (props) => {
   const { page } = props
-  const { posts } = page
+  const { items: posts } = page
 
   const linkMaker: LinkMaker = (page: number) =>
     page === 0 ? '/' : `/page-${page}`
