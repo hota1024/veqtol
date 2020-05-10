@@ -1,40 +1,19 @@
-import { PostData } from '../types/PostData'
-import { Paginate } from './Paginate'
-import { GetPostsContexts } from './GetPostsContexts'
+import dayjs from 'dayjs'
+import { GetPage } from './GetPage'
+import { GetPostsData } from './GetPostsData'
 
-export const GetPagePosts = (page: number, pageSize = 12): PaginatedPosts => {
-  const contexts = GetPostsContexts()
-  const posts: PostData[] = []
-
-  const paginated = Paginate(contexts.keys(), pageSize)
-  const pageCount = paginated.length
-
-  paginated[page].forEach((key) => {
-    const meta = contexts(key).meta ?? {}
-    posts.push({
-      name: key.replace(/\.mdx$/, ''),
-      ...meta,
-    })
-  })
-
-  const result: PaginatedPosts = {
-    posts,
-    pageSize,
-    currentPage: page,
-    pageCount,
-  }
-
-  if (page + 1 < pageCount) result.nextPage = page + 1
-  if (page - 1 >= 0) result.prevPage = page - 1
-
-  return result
-}
-
-export type PaginatedPosts = {
-  posts: PostData[]
-  pageSize: number
-  nextPage?: number
-  prevPage?: number
-  pageCount: number
-  currentPage: number
+/**
+ * Returns page posts.
+ *
+ * @param page Number of page.
+ * @param pageSize Items per page.
+ */
+export const GetPagePosts = (page: number, pageSize = 12) => {
+  return GetPage(
+    GetPostsData().sort((a, b) =>
+      dayjs(a.updatedAt).isBefore(dayjs(b.updatedAt)) ? 1 : -1
+    ),
+    page,
+    pageSize
+  )
 }
