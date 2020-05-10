@@ -23,7 +23,7 @@ export const Header: FC<HeaderProps> = (props) => {
       <style jsx>{`
         .header-root {
           margin-top: 32px;
-          margin-bottom: 63px;
+          margin-bottom: 64px;
           text-align: center;
         }
 
