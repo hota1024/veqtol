@@ -6,6 +6,7 @@ export const defaultConfig: Partial<VeqtolConfig> = {
   descriptionColor: 'inherit',
   background: '#f6f6f6',
   color: '#202020',
+  postsPerPage: 6,
   postColor: 'white',
   postText: 'inherit',
   postHeader1BorderColor: '#202020',
