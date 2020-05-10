@@ -5,15 +5,17 @@ export type ChipProps = {
   href?: string
   color?: string
   textColor?: string
+  fontSize?: string
 }
 
 export const Chip: FC<ChipProps> = (props) => {
   const { href } = props
-  let { color, textColor } = props
+  let { color, textColor, fontSize } = props
 
   const Wrapper = href ? 'a' : 'span'
   color = color ?? '#f0f0f0'
   textColor = textColor ?? '#202020'
+  fontSize = fontSize ?? '0.8rem'
 
   return (
     <>
@@ -29,8 +31,8 @@ export const Chip: FC<ChipProps> = (props) => {
           align-items: center;
           border-radius: 4px;
           text-decoration: none;
-          font-size: 0.8rem;
-          height: 32px;
+          font-size: ${fontSize};
+          padding: 8px 6px;
           margin: 4px;
           transition: all 220ms;
         }
