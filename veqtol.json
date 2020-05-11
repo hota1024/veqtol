@@ -1,4 +1,5 @@
 {
   "title": "Your site title",
-  "description": "You site description"
+  "description": "You site description",
+  "copyright": "Copyright© 2020 - {year} hotalog All rights reserved."
 }

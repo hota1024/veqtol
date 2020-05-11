@@ -10,9 +10,20 @@ export const Footer = () => {
     <>
       <footer className="footer">
         <div className="footer-tags">
-          <h4 className="footer-tags-title">Tags</h4>
+          <h4 className="footer-item-title">Tags</h4>
           <Tags tags={tagNames} />
         </div>
+        <nav className="footer-nav">
+          <a className="footer-nav-link" href="/">
+            Home
+          </a>
+          <a className="footer-nav-link" href="/">
+            Home
+          </a>
+          <a className="footer-nav-link" href="/">
+            Home
+          </a>
+        </nav>
         {Get('copyright') && (
           <div className="footer-copyright">{FormatGet('copyright')}</div>
         )}
@@ -32,26 +43,43 @@ export const Footer = () => {
 
       <style jsx>{`
         .footer-tags {
-          border-top: 1px solid rgba(0, 0, 0, 0.2);
-          padding: 64px 0;
           text-align: center;
+          margin-bottom: 64px;
         }
 
-        .footer-tags-title {
+        .footer-item-title {
           font-size: 2rem;
           margin: 0;
           margin-bottom: 32px;
+        }
+
+        .footer-nav {
+          background: ${Get('footerNavColor')};
+          text-align: center;
+          padding: 32px 0;
+          transition: all 100ms;
+        }
+
+        .footer-nav-link {
+          color: ${Get('footerNavLinkText')};
+          font-weight: 500;
+          text-decoration: none;
+          margin: 0 32px;
+        }
+
+        .footer-nav-link:hover {
+          color: ${Get('footerNavLinkHoverText')};
         }
 
         .footer-copyright {
           background: ${Get('copyrightColor')};
           color: ${Get('copyrightText')};
           text-align: center;
-          padding: 24px 0;
+          padding: 32px 0;
         }
 
         .footer-veqtol {
-          padding: 24px 0;
+          padding: 10px 0;
           text-align: center;
           background: black;
           color: white;
