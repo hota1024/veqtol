@@ -1,16 +1,18 @@
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
-import { Container } from '../components/Container'
-import { Card } from '../components/Card'
-import { CardContent } from '../components/CardContent'
-import { PostMeta } from '../types/PostMeta'
 import { FC } from 'react'
-import { Image } from '../components/Image'
-import { Time } from '../components/Time'
-import { Divider } from '../components/Divider'
-import { PostContent } from '../components/PostContent'
-import { Get } from '../utils/Config'
-import { Tags } from '../components/Tags'
+import { PostMeta } from '@/types'
+import {
+  Header,
+  Container,
+  Card,
+  CardContent,
+  Time,
+  Tags,
+  Divider,
+  PostContent,
+  Footer,
+  Image,
+} from '@/components'
+import { Get } from '@/utils'
 
 export type PostLayoutProps = {
   meta: PostMeta
@@ -21,7 +23,12 @@ export const PostLayout: FC<PostLayoutProps> = (props) => {
 
   return (
     <>
-      <Header title="hotalog" description="プログラミング好きの技術ブログ" />
+      <Header
+        title={Get('title')}
+        titleColor={Get('titleColor')}
+        description={Get('description')}
+        descriptionColor={Get('descriptionColor')}
+      />
       <main className="main-root">
         <Container maxWidth="800px">
           <Card color={Get('postColor')}>
@@ -34,6 +41,7 @@ export const PostLayout: FC<PostLayoutProps> = (props) => {
             <Divider />
             <PostContent>{props.children}</PostContent>
           </Card>
+          <h2>Related posts</h2>
         </Container>
       </main>
       <Footer />
