@@ -2,7 +2,7 @@ import { FC } from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import highlightTheme from 'prism-react-renderer/themes/oceanicNext'
 import clsx from 'clsx'
-import { ParseLineQuery } from '../utils/ParseLineQuery'
+import { ParseLineQuery } from '@/utils'
 
 type HighlightChildren = Parameters<Highlight['props']['children']>[0]
 
