@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import highlightTheme from 'prism-react-renderer/themes/oceanicNext'
 import clsx from 'clsx'
-import { ParseLineQuery } from '@/utils'
+import { ParseLineQuery, PrismThemes } from '@/utils'
 
 type HighlightChildren = Parameters<Highlight['props']['children']>[0]
 
@@ -12,6 +11,7 @@ export type CodeProps = {
   className?: string
   title?: string
   highlight?: string
+  theme?: keyof typeof PrismThemes
 }
 
 export const Code: FC<CodeProps> = (props) => {
@@ -27,6 +27,9 @@ export const Code: FC<CodeProps> = (props) => {
   )
   const isHighlightLine = (line: number) =>
     typeof highlightLines.find((item) => item === line) !== 'undefined'
+  const highlightTheme = props.theme
+    ? PrismThemes[props.theme]
+    : PrismThemes.oceanicNext
 
   return (
     <>
