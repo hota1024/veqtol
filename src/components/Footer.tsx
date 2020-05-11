@@ -2,9 +2,11 @@ import { useContext } from 'react'
 import { CommonContext } from '@/pages/_app'
 import { Tags } from './Tags'
 import { Get, FormatGet } from '@/utils'
+import Link from 'next/link'
 
 export const Footer = () => {
   const { tagNames } = useContext(CommonContext)
+  const navItems = Get('footerLinks')
 
   return (
     <>
@@ -13,17 +15,20 @@ export const Footer = () => {
           <h4 className="footer-tags-title">Tags</h4>
           <Tags tags={tagNames} />
         </div>
-        <nav className="footer-nav">
-          <a className="footer-nav-link" href="">
-            Home
-          </a>
-          <a className="footer-nav-link" href="">
-            Home
-          </a>
-          <a className="footer-nav-link" href="">
-            Home
-          </a>
-        </nav>
+        {navItems.length && (
+          <nav className="footer-nav">
+            {navItems.map((item, key) => (
+              <Link key={key} href={item.href}>
+                <a
+                  href={item.href}
+                  {...(item.newTab ? { target: '__blank' } : {})}
+                >
+                  {item.text}
+                </a>
+              </Link>
+            ))}
+          </nav>
+        )}
         {Get('copyright') && (
           <div className="footer-copyright">{FormatGet('copyright')}</div>
         )}
