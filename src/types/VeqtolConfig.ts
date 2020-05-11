@@ -1,3 +1,25 @@
+/**
+ * Navigation item type.
+ */
+export type NavigationItem = {
+  /**
+   * Navigation text.
+   */
+  text: string
+
+  /**
+   * Navigation URL.
+   */
+  href: string
+
+  /**
+   * Whether open link in new tab.
+   *
+   * @default `false`
+   */
+  newTab?: boolean
+}
+
 /*
  * Veqtol configuration type.
  */
@@ -130,6 +152,34 @@ export type VeqtolConfig = {
    * @default `Next`
    */
   postPaginationNextText?: string
+
+  /**
+   * Footer navigation background style.
+   *
+   * @default `#f0f0f0`
+   */
+  footerNavColor?: string
+
+  /**
+   * Footer nav link text css color.
+   *
+   * @default `#505050`
+   */
+  footerNavLinkText?: string
+
+  /**
+   * Footer nav link hoverd text.
+   *
+   * @default `#202020`
+   */
+  footerNavLinkHoverText?: string
+
+  /**
+   * Footer navigation items.
+   *
+   * @defalut `[]`
+   */
+  footerLinks?: NavigationItem[]
 
   /**
    * Copyright background css style.
