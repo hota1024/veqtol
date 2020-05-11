@@ -16,6 +16,18 @@ export const Footer = () => {
         {Get('copyright') && (
           <div className="footer-copyright">{FormatGet('copyright')}</div>
         )}
+        {!Get('hideVeqtolCredit') && (
+          <div className="footer-veqtol">
+            Powered by{' '}
+            <a
+              className="footer-veqtol-link"
+              href="https://github.com/hota1024/veqtol"
+              target="__blank"
+            >
+              🔺Veqtol
+            </a>
+          </div>
+        )}
       </footer>
 
       <style jsx>{`
@@ -36,6 +48,18 @@ export const Footer = () => {
           color: ${Get('copyrightText')};
           text-align: center;
           padding: 24px 0;
+        }
+
+        .footer-veqtol {
+          padding: 24px 0;
+          text-align: center;
+          background: black;
+          color: white;
+        }
+
+        .footer-veqtol-link {
+          color: #f44336;
+          text-decoration: none;
         }
       `}</style>
     </>
