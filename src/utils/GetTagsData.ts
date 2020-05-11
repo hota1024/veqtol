@@ -1,5 +1,5 @@
-import { GetPostsData } from './GetPostsData'
-import { TagData } from '../types/TagData'
+import { TagData } from '@/types'
+import { GetPostsData } from '@/utils'
 
 /**
  * Returns all tags data.
