@@ -48,7 +48,7 @@ export const Pagination: FC<PaginationProps> = (props) => {
 
       <style jsx global>{`
         .pagination {
-          height: 128px;
+          height: 192px;
           width: 100%;
           position: relative;
           display: flex;
