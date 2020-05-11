@@ -1,5 +1,5 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
-import { PageData, GetPagePosts } from '@/utils'
+import { PageData, GetPagePosts, Get } from '@/utils'
 import { PostData } from '@/types'
 import { LinkMaker, PostList, Pagination } from '@/components'
 import { MainLayout } from '@/layouts/Main'
@@ -29,7 +29,7 @@ const PostPage: NextPage<{ page: PageData<PostData> }> = (props) => {
 export default PostPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const page = GetPagePosts(0, 6)
+  const page = GetPagePosts(0, Get('postsPerPage'))
   const paths: string[] = []
   for (let i = 1; i < page.pageCount; ++i) {
     paths.push(`/page-${i}`)
@@ -44,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { postPage } = context.params
   const pageNumber = parseInt((postPage as string).match(/page-(\d+)/)[1])
-  const page = GetPagePosts(pageNumber, 6)
+  const page = GetPagePosts(pageNumber, Get('postsPerPage'))
 
   return {
     props: { page },
