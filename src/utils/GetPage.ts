@@ -1,4 +1,4 @@
-import { Paginate } from './Paginate'
+import { Paginate } from '@/utils'
 
 /**
  * PageData type.
