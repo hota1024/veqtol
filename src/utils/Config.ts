@@ -12,6 +12,7 @@ export const defaultConfig: Partial<VeqtolConfig> = {
   postColor: 'white',
   postText: 'inherit',
   postHeader1BorderColor: '#202020',
+  codeTheme: 'oceanicNext',
   inlineCodeColor: 'rgba(200, 200, 200, 0.4)',
   inlineCodeText: 'inherit',
   tagColor: '#f0f0f0',
