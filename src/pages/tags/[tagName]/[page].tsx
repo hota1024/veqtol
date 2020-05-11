@@ -5,7 +5,6 @@ import { PageData } from '../../../utils/GetPage'
 import { PostData } from '../../../types/PostData'
 import { LinkMaker, Pagination } from '../../../components/Pagination'
 import { MainLayout } from '../../../layouts/Main'
-import { PostList } from '../../../components/PostList'
 import { TagData } from '../../../types/TagData'
 import { TaggedPosts } from '../../../components/TaggedPosts'
 
