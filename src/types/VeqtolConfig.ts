@@ -91,6 +91,25 @@ export type VeqtolConfig = {
   postHeader1BorderColor?: string
 
   /**
+   * Code default theme.
+   *
+   * @default `oceanicNext`
+   */
+  codeTheme?:
+    | 'dracula'
+    | 'duotoneDark'
+    | 'duotoneLight'
+    | 'github'
+    | 'nightOwl'
+    | 'nightOwlLight'
+    | 'oceanicNext'
+    | 'palenight'
+    | 'shadesOfPurple'
+    | 'synthwave84'
+    | 'ultramin'
+    | 'vsDark'
+
+  /**
    * Inline code background css style.
    *
    * @default `rgba(200, 200, 200, 0.4)`
