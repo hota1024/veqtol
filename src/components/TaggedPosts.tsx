@@ -1,8 +1,6 @@
-import { TagData } from '../types/TagData'
-import { PostData } from '../types/PostData'
 import { FC } from 'react'
-import { PostList } from './PostList'
-import { Chip } from './Chip'
+import { TagData, PostData } from '@/types'
+import { PostList, Chip } from '@/components'
 
 export type TaggedPostsProps = {
   tag: TagData
