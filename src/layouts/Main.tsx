@@ -2,16 +2,16 @@ import { NextComponentType } from 'next'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Container } from '../components/Container'
-import { config, Get } from '../utils/Config'
+import { Get } from '../utils/Config'
 
 export const MainLayout: NextComponentType = (props) => {
   return (
     <>
       <Header
-        title={config.title}
-        titleColor={config.titleColor}
-        description={config.description}
-        descriptionColor={config.descriptionColor}
+        title={Get('title')}
+        titleColor={Get('titleColor')}
+        description={Get('description')}
+        descriptionColor={Get('descriptionColor')}
       />
       <main className="main-root">
         <Container>{props.children}</Container>
