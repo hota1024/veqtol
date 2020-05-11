@@ -41,7 +41,6 @@ export const PostLayout: FC<PostLayoutProps> = (props) => {
             <Divider />
             <PostContent>{props.children}</PostContent>
           </Card>
-          <h2>Related posts</h2>
         </Container>
       </main>
       <Footer />
