@@ -64,7 +64,7 @@ export const Button: FC<ButtonProps> = (props) => {
         }
 
         .button-disabled {
-          background: ${color.darken(0.4).css()};
+          background: ${color.darken(1.4).css()};
           box-shadow: none;
           pointer: default;
           pointer-events: none;
