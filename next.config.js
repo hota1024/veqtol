@@ -4,5 +4,6 @@ const withMDX = require('@next/mdx')({
 })
 
 module.exports = withMDX({
+  exportTrailingSlash: true,
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 })
