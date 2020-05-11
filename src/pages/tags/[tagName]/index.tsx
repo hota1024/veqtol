@@ -1,12 +1,8 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
-import { MainLayout } from '../../../layouts/Main'
-import { TagData } from '../../../types/TagData'
-import { GetPageTaggedPosts } from '../../../utils/GetPageTaggedPosts'
-import { GetTagsData } from '../../../utils/GetTagsData'
-import { PostData } from '../../../types/PostData'
-import { TaggedPosts } from '../../../components/TaggedPosts'
-import { LinkMaker, Pagination } from '../../../components/Pagination'
-import { PageData } from '../../../utils/GetPage'
+import { TagData, PostData } from '@/types'
+import { PageData, GetTagsData, GetPageTaggedPosts } from '@/utils'
+import { LinkMaker, TaggedPosts, Pagination } from '@/components'
+import { MainLayout } from '@/layouts/Main'
 
 export type TagPageProps = {
   tag: TagData
