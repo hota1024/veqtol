@@ -20,9 +20,8 @@ export const PostList: FC<PostListProps> = (props) => {
           max-width: 1200px;
           display: grid;
           justify-content: center;
-          grid-template-columns: repeat(auto-fit, minmax(378px, 1fr));
-          column-gap: 32px;
-          row-gap: 32px;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 48px;
         }
       `}</style>
     </>
