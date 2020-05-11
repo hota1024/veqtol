@@ -1,0 +1,8 @@
+import { PostLayout } from '@/layouts/Post'
+export const meta = {
+  title: 'テスト',
+  tags: ['this', 'is', 'a', 'test'],
+  thumbnail: '/thumbnail-0.png',
+  updatedAt: '2020/5/6',
+}
+export default (props) => <PostLayout {...props} meta={meta} />
