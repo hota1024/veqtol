@@ -10,17 +10,17 @@ export const Footer = () => {
     <>
       <footer className="footer">
         <div className="footer-tags">
-          <h4 className="footer-item-title">Tags</h4>
+          <h4 className="footer-tags-title">Tags</h4>
           <Tags tags={tagNames} />
         </div>
         <nav className="footer-nav">
-          <a className="footer-nav-link" href="/">
+          <a className="footer-nav-link" href="">
             Home
           </a>
-          <a className="footer-nav-link" href="/">
+          <a className="footer-nav-link" href="">
             Home
           </a>
-          <a className="footer-nav-link" href="/">
+          <a className="footer-nav-link" href="">
             Home
           </a>
         </nav>
@@ -43,28 +43,26 @@ export const Footer = () => {
 
       <style jsx>{`
         .footer-tags {
+          padding: 32px 0;
           text-align: center;
-          margin-bottom: 64px;
         }
 
-        .footer-item-title {
+        .footer-tags-title {
           font-size: 2rem;
           margin: 0;
           margin-bottom: 32px;
         }
 
         .footer-nav {
+          padding: 32px 0;
           background: ${Get('footerNavColor')};
           text-align: center;
-          padding: 32px 0;
-          transition: all 100ms;
         }
 
         .footer-nav-link {
           color: ${Get('footerNavLinkText')};
-          font-weight: 500;
+          margin: 0 14px;
           text-decoration: none;
-          margin: 0 32px;
         }
 
         .footer-nav-link:hover {
@@ -75,11 +73,11 @@ export const Footer = () => {
           background: ${Get('copyrightColor')};
           color: ${Get('copyrightText')};
           text-align: center;
-          padding: 32px 0;
+          padding: 24px 0;
         }
 
         .footer-veqtol {
-          padding: 10px 0;
+          padding: 24px 0;
           text-align: center;
           background: black;
           color: white;
