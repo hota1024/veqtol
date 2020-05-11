@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import chroma from 'chroma-js'
-import { NumberUnitize } from '../utils/NumberUnitize'
 import clsx from 'clsx'
-import { Get } from '../utils/Config'
+import { NumberUnitize, Get } from '@/utils'
 
 export type ButtonProps = {
   href?: string
