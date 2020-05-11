@@ -62,7 +62,7 @@ export const Code: FC<CodeProps> = (props) => {
                   {line.map((token, tokenKey) => (
                     <span
                       key={tokenKey}
-                      {...getTokenProps({ token, tokenKey })}
+                      {...getTokenProps({ token, key: tokenKey })}
                     />
                   ))}
                 </div>
