@@ -1,4 +1,5 @@
 export * from './Config'
+export * from './Format'
 export * from './GetPage'
 export * from './GetPagePosts'
 export * from './GetPageTaggedPosts'
