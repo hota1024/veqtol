@@ -15,7 +15,7 @@ export const Footer = () => {
           <h4 className="footer-tags-title">Tags</h4>
           <Tags tags={tagNames} />
         </div>
-        {navItems.length && (
+        {navItems.length === 0 && (
           <nav className="footer-nav">
             {navItems.map((item, key) => (
               <Link key={key} href={item.href}>
