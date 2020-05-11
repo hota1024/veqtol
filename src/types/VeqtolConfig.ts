@@ -130,4 +130,23 @@ export type VeqtolConfig = {
    * @default `Next`
    */
   postPaginationNextText?: string
+
+  /**
+   * Copyright background css style.
+   *
+   * @default `#202020`
+   */
+  copyrightColor?: string
+
+  /**
+   * Copyright text css color.
+   *
+   * @default `white`
+   */
+  copyrightText?: string
+
+  /**
+   * Copyright text.
+   */
+  copyright?: string
 }
