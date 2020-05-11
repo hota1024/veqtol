@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Button } from './Button'
+import { Button } from '@/components'
 import Link from 'next/link'
 
 export type LinkMaker = (page: number) => string
