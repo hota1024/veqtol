@@ -39,6 +39,8 @@ export const PostCard: FC<PostCardProps> = (props) => {
         .post-card {
           min-height: 300px;
           transition: all 500ms;
+          background: ${Get('postColor')};
+          color: ${Get('postText')};
         }
 
         .post-card:hover {
