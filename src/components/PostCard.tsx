@@ -1,14 +1,9 @@
-import { PostData } from '../types/PostData'
 import Link from 'next/link'
 import { FC } from 'react'
 import clsx from 'clsx'
-import { Card } from './Card'
-
-import { Image } from './Image'
-import { CardContent } from './CardContent'
-import { Time } from './Time'
-import { Get } from '../utils/Config'
-import { Tags } from './Tags'
+import { PostData } from '@/types'
+import { Get } from '@/utils'
+import { Card, Image, CardContent, Time, Tags } from '@/components'
 
 export type PostCardProps = {
   className?: string
