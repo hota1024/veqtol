@@ -1,6 +1,5 @@
 import dayjs from 'dayjs'
-import { GetPage } from './GetPage'
-import { GetPostsData } from './GetPostsData'
+import { GetPage, GetPostsData } from '@/utils'
 
 /**
  * Returns page posts.
