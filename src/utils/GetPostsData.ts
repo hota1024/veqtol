@@ -1,5 +1,5 @@
-import { PostData } from '../types/PostData'
-import { GetPostsContexts } from './GetPostsContexts'
+import { GetPostsContexts } from '@/utils'
+import { PostData } from '@/types'
 
 /**
  * Returns all posts data.
