@@ -1,6 +1,6 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import { TagData, PostData } from '@/types'
-import { PageData, GetTagsData, GetPageTaggedPosts } from '@/utils'
+import { PageData, GetTagsData, GetPageTaggedPosts, Get } from '@/utils'
 import { LinkMaker, TaggedPosts, Pagination } from '@/components'
 import { MainLayout } from '@/layouts/Main'
 
@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const tagName = context.params.tagName as string
   const tag = GetTagsData().find(({ name }) => name === tagName)
-  const page = GetPageTaggedPosts(tagName, 0, 6)
+  const page = GetPageTaggedPosts(tagName, 0, Get('postsPerPage'))
 
   return {
     props: {
