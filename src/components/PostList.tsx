@@ -1,6 +1,6 @@
-import { PostData } from '../types/PostData'
 import { FC } from 'react'
-import { PostCard } from './PostCard'
+import { PostData } from '@/types'
+import { PostCard } from '@/components'
 
 export type PostListProps = {
   posts: PostData[]
