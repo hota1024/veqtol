@@ -24,8 +24,8 @@ export const PostCard: FC<PostCardProps> = (props) => {
         className={clsx('post-card', props.className)}
         color={Get('postColor')}
       >
-        <Link href={post.name}>
-          <a className="post-card-link" href={post.name}>
+        <Link href={`/${post.name}`}>
+          <a className="post-card-link" href={`/${post.name}`}>
             <Image src={post.thumbnail} width="100%" height="auto" />
             <CardContent className="post-card-content">
               <h2 className="post-card-title">{post.title}</h2>
