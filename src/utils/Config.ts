@@ -1,5 +1,5 @@
 import veqtolJson from '../../veqtol.json'
-import { VeqtolConfig } from '../types/VeqtolConfig'
+import { VeqtolConfig } from '@/types'
 
 export const defaultConfig: Partial<VeqtolConfig> = {
   titleColor: 'inherit',
