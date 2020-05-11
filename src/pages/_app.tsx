@@ -1,9 +1,36 @@
-import App from 'next/app'
+import App, { AppContext } from 'next/app'
 import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
 import { MdxComponents } from '@/MdxComponents'
+import { GetTagsData } from '@/utils'
+import { createContext } from 'react'
 
-export default class extends App {
+export const CommonContext = createContext({
+  tagNames: [] as string[],
+})
+
+export type AppProps = {
+  tagNames: string[]
+}
+
+export default class extends App<AppProps> {
+  static async getInitialProps({ Component, ctx }: AppContext) {
+    let pageProps = {}
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+
+    const tagNames = GetTagsData().map(({ name }) => name)
+
+    return { pageProps, tagNames }
+  }
+
+  get commonValue() {
+    return {
+      tagNames: this.props.tagNames,
+    }
+  }
+
   render() {
     const { Component, pageProps } = this.props
 
@@ -17,7 +44,9 @@ export default class extends App {
           />
         </Head>
         <MDXProvider components={MdxComponents}>
-          <Component {...pageProps} />
+          <CommonContext.Provider value={this.commonValue}>
+            <Component {...pageProps} />
+          </CommonContext.Provider>
         </MDXProvider>
       </>
     )
