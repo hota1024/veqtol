@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { PageData, GetPagePosts } from '@/utils'
+import { PageData, GetPagePosts, Get } from '@/utils'
 import { PostData } from '@/types'
 import { LinkMaker, PostList, Pagination } from '@/components'
 import { MainLayout } from '@/layouts/Main'
@@ -26,7 +26,7 @@ const Home: NextPage<{ page: PageData<PostData> }> = (props) => {
 }
 
 Home.getInitialProps = () => {
-  const page = GetPagePosts(0, 6)
+  const page = GetPagePosts(0, Get('postsPerPage'))
 
   return {
     page,
