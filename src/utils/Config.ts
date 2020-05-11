@@ -1,5 +1,7 @@
+import dayjs from 'dayjs'
 import veqtolJson from '../../veqtol.json'
 import { VeqtolConfig } from '@/types'
+import { Format } from '@/utils/Format'
 
 export const defaultConfig: Partial<VeqtolConfig> = {
   titleColor: 'inherit',
@@ -36,4 +38,16 @@ export function Get<K extends keyof VeqtolConfig>(
   defaultValue?: VeqtolConfig[K]
 ) {
   return config[key] ?? defaultValue ?? defaultConfig[key]
+}
+
+/**
+ * Returns formatted configuration value.
+ *
+ * @param key Keyof config.
+ */
+export function FormatGet<K extends keyof VeqtolConfig>(key: K) {
+  const now = dayjs(new Date())
+  return Format(Get(key).toString(), {
+    year: now.year(),
+  })
 }
