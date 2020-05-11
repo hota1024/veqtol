@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import clsx from 'clsx'
-import { Chip } from './Chip'
-import { Get } from '../utils/Config'
+import { Chip } from '@/components'
+import { Get } from '@/utils'
 
 export type TagsProps = {
   tags: string[]
