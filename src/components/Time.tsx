@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import dayjs from 'dayjs'
-import { Get } from '../utils/Config'
+import { Get } from '@/utils'
 
 export type TimeProps = {
   time: string
