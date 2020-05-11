@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import { MainLayout } from '../../../layouts/Main'
 import { TagData } from '../../../types/TagData'
 import { GetPageTaggedPosts } from '../../../utils/GetPageTaggedPosts'
@@ -33,15 +33,31 @@ const TagPage: NextPage<TagPageProps> = (props) => {
   )
 }
 
-TagPage.getInitialProps = ({ query }) => {
-  const tagName = query.tagName as string
+export default TagPage
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths: string[] = []
+  const tags = GetTagsData()
+
+  tags.forEach((tag) => {
+    paths.push(`/tags/${tag.name}`)
+  })
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const tagName = context.params.tagName as string
   const tag = GetTagsData().find(({ name }) => name === tagName)
   const page = GetPageTaggedPosts(tagName, 0, 6)
 
   return {
-    tag,
-    page,
+    props: {
+      tag,
+      page,
+    },
   }
 }
-
-export default TagPage
