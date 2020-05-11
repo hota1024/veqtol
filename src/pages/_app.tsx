@@ -2,7 +2,7 @@ import App, { AppContext } from 'next/app'
 import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
 import { MdxComponents } from '@/MdxComponents'
-import { GetTagsData } from '@/utils'
+import { GetTagsData, Get } from '@/utils'
 import { createContext } from 'react'
 
 export const CommonContext = createContext({
@@ -37,7 +37,8 @@ export default class extends App<AppProps> {
     return (
       <>
         <Head>
-          <title>hotalog</title>
+          <title>{Get('title')}</title>
+          <meta name="description" content={Get('description')} />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap"
             rel="stylesheet"
