@@ -149,4 +149,11 @@ export type VeqtolConfig = {
    * Copyright text.
    */
   copyright?: string
+
+  /**
+   * Whether hide veqtol credit.
+   *
+   * @default `false`
+   */
+  hideVeqtolCredit?: boolean
 }
