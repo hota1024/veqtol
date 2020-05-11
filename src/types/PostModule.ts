@@ -1,5 +1,4 @@
 import { PostMeta } from './PostMeta'
-import { Component, FC } from 'react'
 
 /*
  * PostModule type.
@@ -13,5 +12,6 @@ export type PostModule = {
   /**
    * Post layout.
    */
-  default: Component | FC
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  default: (props: any) => JSX.Element
 }
