@@ -26,6 +26,9 @@
           "postColor": {
             "type": "string"
           },
+          "postsPerPage": {
+            "type": "number"
+          },
           "postText": {
             "type": "string"
           },
@@ -57,6 +60,15 @@
             "type": "string"
           },
           "postPaginationNextText": {
+            "type": "string"
+          },
+          "copyrightColor": {
+            "type": "string"
+          },
+          "copyrightText": {
+            "type": "string"
+          },
+          "copyright": {
             "type": "string"
           }
         },
