@@ -67,6 +67,7 @@ export const PostLayout: FC<PostLayoutProps> = (props) => {
           flex: 1;
           height: 100%;
           display: flex;
+          margin-bottom: 64px;
         }
       `}</style>
     </>
