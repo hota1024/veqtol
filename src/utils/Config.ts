@@ -19,6 +19,8 @@ export const defaultConfig: Partial<VeqtolConfig> = {
   buttonText: '#202020',
   postPaginationPrevText: 'Prev',
   postPaginationNextText: 'Next',
+  copyrightColor: '#202020',
+  copyrightText: 'white',
 }
 
 export const config = veqtolJson as VeqtolConfig
