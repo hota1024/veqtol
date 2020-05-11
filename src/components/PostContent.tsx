@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Get } from '../utils/Config'
+import { Get } from '@/utils'
 
 export const PostContent: FC = (props) => {
   return (
