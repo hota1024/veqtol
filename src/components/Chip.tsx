@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import Link from 'next/link'
 import chroma from 'chroma-js'
 
 export type ChipProps = {
@@ -19,9 +20,17 @@ export const Chip: FC<ChipProps> = (props) => {
 
   return (
     <>
-      <Wrapper className="tag" href={href}>
-        <span className="tag-label">{props.children}</span>
-      </Wrapper>
+      {href ? (
+        <Link href={href}>
+          <Wrapper className="tag" href={href}>
+            <span className="tag-label">{props.children}</span>
+          </Wrapper>
+        </Link>
+      ) : (
+        <Wrapper className="tag">
+          <span className="tag-label">{props.children}</span>
+        </Wrapper>
+      )}
 
       <style jsx>{`
         .tag {
