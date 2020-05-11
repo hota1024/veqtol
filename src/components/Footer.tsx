@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { CommonContext } from '@/pages/_app'
 import { Tags } from './Tags'
-import { Get } from '@/utils'
+import { Get, FormatGet } from '@/utils'
 
 export const Footer = () => {
   const { tagNames } = useContext(CommonContext)
@@ -14,7 +14,7 @@ export const Footer = () => {
           <Tags tags={tagNames} />
         </div>
         {Get('copyright') && (
-          <div className="footer-copyright">{Get('copyright')}</div>
+          <div className="footer-copyright">{FormatGet('copyright')}</div>
         )}
       </footer>
 
