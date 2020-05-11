@@ -1,7 +1,7 @@
 import App from 'next/app'
 import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
-import { MdxComponents } from '../MdxComponents'
+import { MdxComponents } from '@/MdxComponents'
 
 export default class extends App {
   render() {
