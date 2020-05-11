@@ -179,7 +179,24 @@ export type VeqtolConfig = {
    *
    * @defalut `[]`
    */
-  footerLinks?: NavigationItem[]
+  footerLinks?: {
+    /**
+     * Navigation text.
+     */
+    text: string
+
+    /**
+     * Navigation URL.
+     */
+    href: string
+
+    /**
+     * Whether open link in new tab.
+     *
+     * @default `false`
+     */
+    newTab?: boolean
+  }[]
 
   /**
    * Copyright background css style.
