@@ -2,7 +2,7 @@ import App, { AppContext } from 'next/app'
 import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
 import { MdxComponents } from '@/MdxComponents'
-import { GetTagsData, Get } from '@/utils'
+import { GetTagsData } from '@/utils'
 import { createContext } from 'react'
 
 export const CommonContext = createContext({
