@@ -3,10 +3,16 @@ import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Container } from '../components/Container'
 import { Get } from '../utils/Config'
+import { HeadMeta } from '@/components'
 
 export const MainLayout: NextComponentType = (props) => {
   return (
     <>
+      <HeadMeta
+        title={Get('title')}
+        description={Get('description')}
+        image={Get('siteImageUrl')}
+      />
       <Header
         title={Get('title')}
         titleColor={Get('titleColor')}
