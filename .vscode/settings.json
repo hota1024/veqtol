@@ -20,6 +20,9 @@
           "siteUrl": {
             "type": "string"
           },
+          "twitterName": {
+            "type": "string"
+          },
           "background": {
             "type": "string"
           },
