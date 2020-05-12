@@ -1,4 +1,5 @@
 {
   "title": "Your site title",
-  "description": "Your site description"
+  "description": "Your site description",
+  "siteUrl": "http://localhost"
 }
