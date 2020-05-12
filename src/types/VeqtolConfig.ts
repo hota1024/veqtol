@@ -49,6 +49,11 @@ export type VeqtolConfig = {
   descriptionColor?: string
 
   /**
+   * Site url.
+   */
+  siteUrl: string
+
+  /**
    * Site background css style.
    *
    * @default `#f6f6f6`
