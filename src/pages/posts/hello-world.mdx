@@ -1,8 +1,38 @@
 import { PostLayout } from '@/layouts/Post'
+import { Button } from '@/components'
+
 export const meta = {
-  title: 'テスト',
+  title: 'Hello world',
   tags: ['this', 'is', 'a', 'test'],
-  thumbnail: '/thumbnail-0.png',
-  updatedAt: '2020/5/6',
+  thumbnail: '/veqtol.png',
+  createdAt: '2020/5/12',
+  updatedAt: '2020/5/12',
 }
 export default (props) => <PostLayout {...props} meta={meta} />
+
+Hello world.
+
+This is a **test** _post_.
+
+```cpp title=main.cpp
+# include <iostream>
+
+int main()
+{
+  std::cout << "Hello world" << std::endl;
+
+  return 0;
+}
+```
+
+```cpp title=main.cpp theme=vsDark
+// Theme = vscode-dark
+# include <iostream>
+
+int main()
+{
+  std::cout << "Hello world" << std::endl;
+
+  return 0;
+}
+```
