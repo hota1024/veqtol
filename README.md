@@ -1,7 +1,7 @@
 ![veqtol](https://user-images.githubusercontent.com/24543982/81640328-34f9ae80-9459-11ea-8ead-3019f21e5875.png)
 
 <h1 align="center">🔺Veqtol</h1>
-<p align="center">Static blog site template powered by Next.js and MDX></p>
+<p align="center">Static blog site template powered by Next.js and MDX</p>
 
 ## 💻 Demo
 
