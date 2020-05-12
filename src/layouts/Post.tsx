@@ -11,8 +11,10 @@ import {
   PostContent,
   Footer,
   Image,
+  HeadMeta,
 } from '@/components'
 import { Get } from '@/utils'
+import Head from 'next/head'
 
 export type PostLayoutProps = {
   meta: PostMeta
@@ -20,9 +22,18 @@ export type PostLayoutProps = {
 
 export const PostLayout: FC<PostLayoutProps> = (props) => {
   const { meta } = props
+  const title = `${props.meta.title} | ${Get('title')}`
+  const description = Get('description')
 
   return (
     <>
+      <Head>
+        <HeadMeta
+          title={title}
+          description={description}
+          image={meta.thumbnail ? Get('siteUrl') + meta.thumbnail : void 0}
+        />
+      </Head>
       <Header
         title={Get('title')}
         titleColor={Get('titleColor')}
