@@ -16,3 +16,7 @@
 - 🎨 Simple UI and UX.
 - 🐯 Powerful code block with Prism.js, titled code and highlight line query.
 - 🔧 Customizable for your site.
+
+## ⚙ Configuration items
+
+<https://github.com/hota1024/veqtol/blob/master/src/types/VeqtolConfig.ts>
