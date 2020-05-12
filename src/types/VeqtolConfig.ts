@@ -54,6 +54,13 @@ export type VeqtolConfig = {
   siteUrl: string
 
   /**
+   * Your twitter username.
+   *
+   * @default `undefined`
+   */
+  twitterName?: string
+
+  /**
    * Site background css style.
    *
    * @default `#f6f6f6`
