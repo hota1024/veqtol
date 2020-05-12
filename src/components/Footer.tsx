@@ -22,6 +22,7 @@ export const Footer = () => {
                 <a
                   href={item.href}
                   {...(item.newTab ? { target: '__blank' } : {})}
+                  className="footer-nav-link"
                 >
                   {item.text}
                 </a>
