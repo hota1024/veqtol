@@ -49,9 +49,14 @@ export type VeqtolConfig = {
   descriptionColor?: string
 
   /**
-   * Site url.
+   * Site url without last slash(ex: `https://example.com`).
    */
   siteUrl: string
+
+  /**
+   * Site ogp image url.
+   */
+  siteImageUrl?: string
 
   /**
    * Your twitter username.
