@@ -1,5 +1,5 @@
 {
   "title": "Your site title",
   "description": "Your site description",
-  "siteUrl": "http://localhost"
+  "siteUrl": "http://localhost:3000"
 }
