@@ -24,3 +24,33 @@
 ## ⚙ Configuration items
 
 <https://github.com/hota1024/veqtol/blob/master/src/types/VeqtolConfig.ts>
+
+## 🚀 Quick start
+
+### 1. 🔽 Clone this repository
+
+```bash
+git clone https://github.com/hota1024/veqtol.git
+```
+
+### 2. 🔗 Install dependencies
+
+```bash
+yarn
+# or
+npm install
+```
+
+### 3. 🔥 Start development server
+
+```
+yarn dev
+# or
+npm run dev
+```
+
+And open <http://localhost:3000>
+
+### 4. ❓ What's next?
+
+comming soon.
